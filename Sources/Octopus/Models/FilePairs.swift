@@ -16,11 +16,9 @@ struct FilePairs {
 }
 
 extension FilePairs {
-    var namesByOriginalName: [String: String] {
-        pairs
-            .map { pair in (pair.newName, pair.originalName) }
-            .reduce(into: [String: String]()) { map, pair in
-                map[pair.0] = pair.1
-            }
+    var pairsMap: [String: String] {
+        pairs.reduce(into: [:]) { result, pair in
+            result[pair.originalName] = pair.newName
+        }
     }
 }
