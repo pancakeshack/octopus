@@ -1,0 +1,44 @@
+{
+  "configurations": [
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:octopus}",
+      "name": "Debug octopus",
+      "target": "octopus",
+      "configuration": "debug",
+      "preLaunchTask": "swift: Build Debug octopus"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:octopus}",
+      "name": "Release octopus",
+      "target": "octopus",
+      "configuration": "release",
+      "preLaunchTask": "swift: Build Release octopus"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:octopus}",
+      "name": "Debug Octopus",
+      "target": "Octopus",
+      "configuration": "debug",
+      "preLaunchTask": "swift: Build Debug Octopus"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:octopus}",
+      "name": "Release Octopus",
+      "target": "Octopus",
+      "configuration": "release",
+      "preLaunchTask": "swift: Build Release Octopus"
+    }
+  ]
+}

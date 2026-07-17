@@ -1,0 +1,25 @@
+// swift-tools-version: 6.4
+
+import PackageDescription
+
+let package = Package(
+    name: "Octopus",
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.8.2")
+    ],
+    targets: [
+        .executableTarget(
+            name: "Octopus",
+            swiftSettings: [
+                .enableUpcomingFeature("ApproachableConcurrency")
+            ],
+        ),
+        .testTarget(
+            name: "OctopusTests",
+            dependencies: ["Octopus"],
+            swiftSettings: [
+                .enableUpcomingFeature("ApproachableConcurrency")
+            ],
+        ),
+    ]
+)
