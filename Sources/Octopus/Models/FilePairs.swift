@@ -1,6 +1,26 @@
 import FoundationModels
 
-@Generable(description: "A pair of files and their new names, in the shape of [old:new]")
+@Generable(description: "A collection of file rename operations.")
 struct FilePairs {
-    let pairs: [String: String]
+    @Guide(description: "One rename for each input file.")
+    let pairs: [FilePair]
+
+    @Generable(description: "The current and proposed names for one file.")
+    struct FilePair {
+        @Guide(description: "The file's current name, including its extension.")
+        let originalName: String
+
+        @Guide(description: "The proposed new name, including its extension.")
+        let newName: String
+    }
+}
+
+extension FilePairs {
+    var namesByOriginalName: [String: String] {
+        pairs
+            .map { pair in (pair.newName, pair.originalName) }
+            .reduce(into: [String: String]()) { map, pair in
+                map[pair.0] = pair.1
+            }
+    }
 }

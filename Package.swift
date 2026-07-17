@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "Octopus",
+    platforms: [
+        .macOS(.v27)
+    ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.8.2")
     ],
