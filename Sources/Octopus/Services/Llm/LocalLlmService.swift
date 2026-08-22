@@ -7,7 +7,12 @@ struct LocalLlmService: LlmService {
         number, for instance "s01e02.mkv". Keep the extension. Any files that are not media files you can ignore in the output.
         Do not invent missing files or details, they must only be from the input.
         """
+
     private let model = SystemLanguageModel.default
+
+    var isAvailable: Bool {
+        model.isAvailable
+    }
 
     func generatePairs(files: [String]) async throws -> FilePairs {
         let session = LanguageModelSession(

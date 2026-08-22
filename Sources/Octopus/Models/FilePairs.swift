@@ -15,10 +15,3 @@ struct FilePairs {
     }
 }
 
-extension FilePairs {
-    var pairsMap: [String: String] {
-        pairs.reduce(into: [:]) { result, pair in
-            result[pair.originalName] = pair.newName
-        }
-    }
-}

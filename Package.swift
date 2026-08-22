@@ -13,6 +13,9 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "Octopus",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser")
+            ],
             swiftSettings: [
                 .enableUpcomingFeature("ApproachableConcurrency")
             ],
